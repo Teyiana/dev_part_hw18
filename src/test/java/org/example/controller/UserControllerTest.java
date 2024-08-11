@@ -67,7 +67,7 @@ public class UserControllerTest {
 
         UserDTO result = userController.update(userToUpdate);
 
-        assertNotEquals(userToReturn, result);
+        assertEquals(userToReturn, result);
         verify(userService).update(userToUpdate);
     }
 
