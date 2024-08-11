@@ -1,8 +1,7 @@
-package org.example.controler;
+package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.NoteDTO;
-import org.example.model.Note;
 import org.example.service.NoteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
