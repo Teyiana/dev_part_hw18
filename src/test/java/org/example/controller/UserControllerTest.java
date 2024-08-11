@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -55,7 +56,8 @@ public class UserControllerTest {
         when(userService.findUserById(id)).thenReturn(user);
         ResponseEntity result = userController.read(id);
 
-        assertEquals(user, result);
+        assertEquals(user, result.getBody());
+        assertEquals(HttpStatusCode.valueOf(200), result.getStatusCode());
         verify(userService).findUserById(id);
     }
 
