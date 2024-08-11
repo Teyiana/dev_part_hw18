@@ -26,7 +26,7 @@ public class UserControllerTest {
     private UserController userController;
 
     @Test
-    private void testCreate() {
+    public void testCreate() {
         UserDTO userToCreate = mock(UserDTO.class);
         UserDTO userToReturn = mock(UserDTO.class);
         when(userService.create(userToCreate)).thenReturn(userToReturn);
@@ -38,7 +38,7 @@ public class UserControllerTest {
     }
 
     @Test
-    private void testRead() {
+    public void testRead() {
         List<UserDTO> users = mock(List.class);
         when(userService.findAllUsers()).thenReturn(users);
 
@@ -49,7 +49,7 @@ public class UserControllerTest {
     }
 
     @Test
-    private void testReadById() {
+    public void testReadById() {
         long id = 1L;
         UserDTO user = mock(UserDTO.class);
         when(userService.findUserById(id)).thenReturn(user);
@@ -60,7 +60,7 @@ public class UserControllerTest {
     }
 
     @Test
-    private void testUpdate() {
+    public void testUpdate() {
         UserDTO userToUpdate = mock(UserDTO.class);
         UserDTO userToReturn = mock(UserDTO.class);
         when(userService.update(userToUpdate)).thenReturn(userToReturn);
@@ -72,8 +72,7 @@ public class UserControllerTest {
     }
 
     @Test
-
-    private void testDelete() {
+    public void testDelete() {
         long id = 1L;
         ResponseEntity result = userController.delete(id);
 
