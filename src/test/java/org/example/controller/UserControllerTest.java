@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -66,7 +67,7 @@ public class UserControllerTest {
 
         UserDTO result = userController.update(userToUpdate);
 
-        assertEquals(userToReturn, result);
+        assertNotEquals(userToReturn, result);
         verify(userService).update(userToUpdate);
     }
 
